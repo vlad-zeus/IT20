@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="Страница, меню, списки, кнопки">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  <title>Задание 01</title>
+</head>
+<body>
+<!--Задание 03, выполнено 04.10.2021-->
+<div class="main">
+  <nav role="navigation" class="menu_horizontal">
+    <ul class="menu_horizontal_item">
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">Институт</a></li>
+      <li><a href="#">Издания</a></li>
+      <li class="down"><a href="#">Образование</a>
+        <ul class="submenu">
+          <li class="level_two"><a href="#">Item 1</a>
+            <ul class="down">
+              <li><a href="#">Item 1</a>
+                <ul>
+                  <li><a href="#">Item 1</a></li>
+                  <li><a href="#">Item 2</a></li>
+                  <li><a href="#">Item 3</a></li>
+                  <li><a href="#">Item 4</a></li>
+                  <li><a href="#">Item 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Item 2</a></li>
+              <li><a href="#">Item 3</a></li>
+            </ul>
+          </li>
+          <li class="level_two"><a href="#">Item 2</a></li>
+          <li class="level_two"><a href="#">Item 3</a></li>
+          <li class="level_two"><a href="#">Item 4</a>
+            <ul>
+              <li><a href="#">Item 1</a></li>
+              <li><a href="#">Item 2</a></li>
+              <li><a href="#">Item 3</a></li>
+              <li><a href="#">Item 4</a></li>
+              <li><a href="#">Item 5</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#">Наука</a></li>
+      <li><a href="#">Контакты</a></li>
+      <li><a href="#">Коррупция</a></li>
+    </ul>
+  </nav>
+  <div class="search">
+    <form action="" method="get">
+      <input class="search_form" placeholder="Поиск по сайту" type="search">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+  <div class="lang"></div>
+</div>
+</body>
+</html>

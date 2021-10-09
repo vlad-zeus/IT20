@@ -1,0 +1,25 @@
+h3 {
+    text-transform: lowercase;
+}
+
+h3:first-letter {
+    text-transform: uppercase;
+}
+
+#title {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+
+#lyric {
+    height: 100%;
+    font-size: 12pt;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    white-space: pre;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+

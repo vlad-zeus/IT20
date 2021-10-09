@@ -1,0 +1,138 @@
+/* задаем цвет фона для контейнера nav. */
+* {
+    margin: 0;
+}
+nav {
+    width: 65%;
+    background-color: #bdbbbc;
+    float:left;
+}
+.search {
+    width: 25%;
+    float:left;
+    height: 100%;
+}
+.search_form {
+    height: 40px;
+}
+.fa-search {
+    position: relative;
+    top: 4px;
+}
+button {
+    height: 26px;
+    width: 26px;
+    position: relative;
+    top: 4px;
+    right: 33px;
+    background: #F15B42;
+    cursor: pointer;
+}
+button:before {
+    color: #F9F0DA;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* убираем отступы и поля, а также list-style для "ul",
+ * и добавляем "position:relative" */
+nav ul {
+    padding:0;
+    margin:0;
+    list-style: none;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* применяем inline-block позиционирование к элементам навигации */
+nav ul li {
+    margin: 0px;
+    background-color: #bdbbbc;
+    list-style: none;
+    float: left;
+    text-align: left;
+    width: calc(100% / 7);
+}
+
+/* стилизуем ссылки */
+nav a {
+    display:block;
+    padding:0 10px;
+    color: #000000;
+    font-size:20px;
+    line-height: 40px;
+    text-decoration:none;
+}
+
+
+/* изменяем цвет фона при наведении курсора */
+nav li a:hover {
+    background-color: #fdfbfc;
+    color: #fa0000;
+}
+/* скрываем выпадающие списки по умолчанию
+			 * и задаем абсолютное позиционирование */
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+/* отображаем выпадающий список при наведении */
+nav ul li:hover > ul {
+    display:inherit;
+    background-color: #fdfbfc;
+    color: #ee63a8;
+}
+
+/* первый уровень выпадающего списка */
+nav ul ul li {
+    min-width:170px;
+    float:none;
+    display:list-item;
+    position: relative;
+    background-color: #ee63a8;
+    color: #fa0000;
+}
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: #ee63a8;
+    color: #fa0000;
+}
+
+/* отображаем выпадающий список при наведении */
+nav ul li:hover > ul {
+    display:inherit;
+    background-color: #ee63a8;
+    color: #fa0000;
+
+}
+
+/* первый уровень выпадающего списка */
+nav ul ul li {
+    min-width:170px;
+    float:none;
+    display:list-item;
+    position: relative;
+}
+/* второй, третий и последующие уровни
+			 * смещаем 2 и 3 уровни влево
+			 * на значение длины первого уровня.
+			*/
+nav ul ul ul {
+    position: absolute;
+    top:0;
+    left:100%;
+}
+/* измените ' +' на любой другой символ, если нужно
+	*/
+li > a:after {
+    content:  ' >';
+}
+li > a:only-child:after {
+    content: '';
+}

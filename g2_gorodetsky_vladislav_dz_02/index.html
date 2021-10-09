@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="Формы, списки, кнопки">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Задание 01</title>
+</head>
+<body>
+<!--Задание 02/01, выполнено 01.10.2021-->
+<div id="global_form">
+    <form>
+        <div id="nav_bar">
+            <div id="nav_link">
+                <ul>
+                    <li>Категории</li>
+                    <li>Новости</li>
+                    <li>Добавить новость</li>
+                    <li>Настройки</li>
+                </ul>
+            </div>
+            <div id="nav_button">
+                <ul>
+                    <li><input type="button" value="Сохранить"></li>
+                    <li><input type="button" value="Сохранить и добавить"></li>
+                    <li><input type="button" value="Сохранить и закрыть"></li>
+                    <li><input type="button" value="Закрыть"></li>
+                </ul>
+            </div>
+        </div>
+        <div id="middle">
+            <div id="left">
+                <ul>
+                    <li>Название новости</li>
+                        <input type="text" name="name_of_news" id="name_of_news">
+                    <li>Алиас</li>
+                        <input type="text" name="alias" id="alias">
+                    <li>Анонс</li>
+                        <textarea name="Анонс" id="announce"></textarea>
+                    <li>Текст</li>
+                        <textarea name="Текст" id="text"></textarea>
+                </ul>
+            </div>
+            <div id="right">
+                <ul>
+                    <li>Фото</li>
+                        <input type="file" name="photo" id="photo">
+                    <li>Слайдер</li>
+                        <select name="slider" id="select_slider">
+                            <option value="Не активна">Не активна</option>
+                            <option value="Активна">Активна</option>
+                        </select>
+                    <li>Основные новости</li>
+                        <select name="main_news" id="select_main_news">
+                            <option value="Не активна">Не активна</option>
+                            <option value="Активна">Активна</option>
+                        </select>
+                    <li>Активность</li>
+                        <select name="activity" id="select_activity">
+                            <option value="Не активна">Не активна</option>
+                            <option value="Активна">Активна</option>
+                        </select>
+                    <li>Категория</li>
+                        <select name="category" id="select_category">
+                            <option value="Политика">Политика</option>
+                            <option value="Спорт">Спорт</option>
+                            <option value="Знаменитости">Знаменитости</option>
+                        </select>
+                    <li>Дата создания новости</li>
+                        <input id="datetime" type="datetime-local">
+                    <li>Количество просмотров</li>
+                        <input type="text" name="views" id="views">
+                    <li>Автор</li>
+                        <input type="text" name="author" id="author">
+                    <li>Теги</li>
+                        <input type="text" name="tags" id="tags">
+                    <li>Keywords meta</li>
+                        <input type="text" name="keywords_meta" id="keywords_meta">
+                    <li>Description Meta</li>
+                        <textarea name="description_meta" id="description_meta"></textarea>
+                </ul>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
