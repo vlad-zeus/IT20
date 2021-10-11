@@ -1,0 +1,17 @@
+:root {
+    --main-bg-color: #102457;
+    --link-color: #EB5757;
+}
+*,
+:before,
+:after {
+    box-sizing: border-box;
+    margin: 0;
+}
+.container {
+    margin: 0 auto;
+    width: 1280px;
+    background: var(--main-bg-color);
+}
+
+
