@@ -81,6 +81,7 @@
     align-items: center;
     background: linear-gradient(0deg, #00A87C, #00A87C), linear-gradient(180deg, #EBECF0 0%, rgba(235, 236, 240, 0) 100%);
     border: 2px solid #00A87C;
+    cursor: pointer;
 }
 .header__enter {
     padding: 0 40px 0  40px
