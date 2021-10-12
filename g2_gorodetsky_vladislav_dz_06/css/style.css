@@ -102,7 +102,6 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 133.5%;
-    /* or 21px */
     text-transform: uppercase;
     color: #FFFFFF;
     width: 707px;
@@ -138,7 +137,6 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 133.5%;
-    /* or 27px */
     display: flex;
     align-items: center;
     text-transform: uppercase;
@@ -150,7 +148,6 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 133.5%;
-    /* or 21px */
     color: #FFFFFF;
     max-width: 350px;
     display: block;
@@ -214,12 +211,11 @@ ul li {
     display: block;
     padding: 170px 0 42px 0;
     font-family: Arial;
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 133.5%;
-/* or 27px */
-color: #00A87C;;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 133.5%;
+    color: #00A87C;
 }
 .selected_item {
     display: flex;
@@ -231,8 +227,7 @@ color: #00A87C;;
     font-size: 14px;
     line-height: 133.5%;
     padding: 0 0 16px 0;
-/* or 19px */
-color: #061058;
+    color: #061058;
 }
 .list_left_bot{
     list-style: none;
@@ -248,7 +243,6 @@ color: #061058;
     font-weight: 600;
     font-size: 14px;
     line-height: 133.5%;
-    /* or 19px */
     color: #061058;
 }
 .list__items_volume_right {
@@ -274,7 +268,6 @@ color: #061058;
     font-weight: 600;
     font-size: 18px;
     line-height: 133.5%;
-    /* or 24px */
     text-transform: uppercase;
     color: #061058;
 }
@@ -284,7 +277,6 @@ color: #061058;
     font-weight: normal;
     font-size: 14px;
     line-height: 133.5%;
-    /* or 19px */
     color: #061058;
 }
 .educashion_block {
