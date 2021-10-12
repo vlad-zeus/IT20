@@ -78,7 +78,6 @@
     border-radius: 4px;
     width: 245.72px;
     height: 60px;
-    align-items: center;
     background: linear-gradient(0deg, #00A87C, #00A87C), linear-gradient(180deg, #EBECF0 0%, rgba(235, 236, 240, 0) 100%);
     border: 2px solid #00A87C;
     cursor: pointer;
@@ -310,4 +309,7 @@ color: #061058;
 }
 .header__btn:focus {
     color:#15c596
+}
+a[href^="tel:"], a[href^="mailto:"] {
+    text-decoration: none;
 }
