@@ -1,0 +1,57 @@
+:root {
+  --font-roboto-14: normal normal normal 14px/135% "Roboto";
+  --font-roboto-18: normal normal normal 18px/21px "Roboto";
+  --font-av-14: normal normal normal 14px/17px "Avenir Next LT Pro", sans-serif;
+  --font-av-14-bold: normal normal bold 14px/17px "Avenir Next LT Pro",
+    sans-serif;
+  --font-av-16: normal normal normal 16px/133% "Avenir Next LT Pro", sans-serif;
+  --font-av-16-b: normal normal normal bold 16px/133% "AvenirNext LT Pro",
+    sans-serif;
+  --font-av-20-600: normal normal bold 20px/133% "Avenir Next LT Pro",
+    sans-serif;
+  --font-av-24-b: normal normal bold 20px/133% "Avenir Next LT Pro", sans-serif;
+  --font-color-blue: #061058;
+  --font-color-white: white;
+}
+*,
+:before,
+:after {
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration: none;
+}
+.img {
+  width: 100%;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+.header__semicircle {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.header__contact  {
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.quartercircle  {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.header__contact--text {
+  font: var(--font-av-14-bold);
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  color: #061058;
+}
+.button_enter {
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.button_enter_form {
+  align-items: center;
+}
