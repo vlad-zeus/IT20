@@ -164,9 +164,6 @@
 .bot_div_text {
   display: flex;
 }
-.middle_block {
-  display: flex;
-}
 .list__items_volume_right,
 .list_items_small_left_bottom {
   list-style: none;
@@ -365,4 +362,16 @@ a[href^="mailto:"] {
 }
 .header {
   display: flex;
+}
+
+.col-lg-7 .body__toptext .body__item {
+  padding: 0;
+}
+
+.col-md-7 {
+  padding: 0;
+}
+.right_block {
+  min-width: 505px;
+  min-height: 407px;
 }
