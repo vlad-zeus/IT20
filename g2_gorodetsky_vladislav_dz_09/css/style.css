@@ -7,6 +7,7 @@
     --font-roboto-14-16: normal normal normal 14px/16.41px "Roboto";
     --font-roboto-14-22: normal normal normal 14px/22.97px "Roboto";
     --font-roboto-16: normal normal normal 16px/22.5px "Roboto";
+    --font-roboto-16-b: normal normal bold 16px/22.5px "Roboto";
     --font-roboto-18: normal normal normal 18px/21px "Roboto";
     --font-roboto-24: normal normal normal 24px/28.18px "Roboto";
     --font-roboto-cond-10: normal normal 400 10px/11.72px "Roboto Condensed";
@@ -30,14 +31,17 @@
     padding-right: 0;
     padding-left: 0;
 }
+
 @media (min-width: 1200px) {
     .container {
         width: 1110px;
     }
 }
+
 .top_logo {
     background-color: #F2FCFF;
 }
+
 .top_menu {
     background: var(--bg-color-blue);
     height: 45px;
@@ -46,6 +50,7 @@
     padding-top: 0;
     padding-bottom: 0;
 }
+
 .navbar {
     margin-left: 0;
     margin-right: 0;
@@ -56,10 +61,12 @@
     background-color: var(--bg-color-blue);
     z-index: 99;
 }
+
 .nav-link {
     display: block;
     padding: 0.65rem 0.65rem;
 }
+
 .menu {
     padding: 0 12px 0 12px;
 }
@@ -67,9 +74,11 @@
 .menu:hover {
     background-color: #FF5858;
 }
+
 .search_icon {
     padding: 20px 0 20px 0;
 }
+
 .f-circle {
     color: #3b5998;
     font-size: 16px;
@@ -80,29 +89,35 @@
     text-align: center;
     border-radius: 50%;
 }
+
 .fa-search:before {
     color: #3b5998;
     font-size: 16px;
     padding: 0 4px 0 0;
 }
+
 .middle_top {
-background-color: #F2FCFF;
-padding: 30px 0 30px 0;
+    background-color: #F2FCFF;
+    padding: 30px 0 30px 0;
+}
+.middle_top_after, .middle_bottom {
+    padding: 30px 0 30px 0;
 }
 .news_heading {
-color: #E41616;
-font: var(--font-raleway-16);
-text-transform: uppercase;
-position: relative;
-    padding: 30px 0 0 0;
+    color: #E41616;
+    font: var(--font-raleway-16);
+    text-transform: uppercase;
+    position: relative;
+    padding: 20px 0 0 0;
+    margin: 0 0 30px 0;
 }
 .news_heading:after {
-display: block;
-width: 200px;
-content: '';
-position: absolute;
-border-bottom: 2px solid #58ABD7;
-bottom: -1px;
+    display: block;
+    width: 200px;
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #58ABD7;
+    bottom: -1px;
 }
 .slide_row {
     min-height: 680px;
@@ -113,7 +128,7 @@ bottom: -1px;
 }
 .bottom_of_slide {
     background-color: #58ABD7;
-    padding: 7px 0 30px 0;
+    padding: 7px 0 15px 0;
 }
 .prev_slide, .next_slide {
     width: 6%;
@@ -125,18 +140,20 @@ bottom: -1px;
     font: var(--font-raleway-24);
     text-transform: uppercase;
     color: white;
-}.main_text_to_slide {
+}
+.main_text_to_slide {
     font: var(--font-roboto-16);
     color: white;
 }
 .infinnovation {
     position: relative;
-    background: url("../img/infinnovation.png");
+    background: url("../img/infinnovation.png") no-repeat;
     height: 213px;
     width: 255px;
+    /*background-size:100%*/
     /*background-size: 100%*/
 }
-.text1_1, .text1_2, .text2_1, .text3_1, .text4_1, .text5_1{
+.text1_1, .text1_2, .text2_1, .text3_1, .text4_1, .text5_1 {
     display: block;
 }
 .text1_1, .text1_2 {
@@ -197,4 +214,56 @@ bottom: -1px;
     background-color: rgba(48, 94, 158, 1);
     opacity: 0.9;
     text-align: right;
+}
+.main_photo {
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+}
+.text_main_photo {
+    display: block;
+    box-sizing: content-box;
+    position: absolute;
+    color: white;
+    background-color: var(--bg-color-blue);
+    width: calc(100% - 15px);
+    opacity: 0.9;
+    left: 0;
+    bottom: 0;
+    padding: 15px 0 15px  15px;
+}
+.twentieth_april, .twenty_first_april  {
+    height: 213px;
+    width: 255px;
+}
+.twentieth_april {
+    background: url('../img/20april.png');
+}
+.twenty_first_april {
+    background: url('../img/21april.png');
+}
+.text7_1, .text7_2, .text7_3, .text7_4 {
+    color: white;
+    display: block;
+    width: 255px;
+    text-align: left;
+}
+.text7_1 {
+    padding: 20px 0 0 20px;
+}
+.text7_3 {
+    margin-top: 60px;
+}
+.text7_2, .text7_3, .text7_4 {
+    padding: 0 0 0 20px;
+    font: var(--font-roboto-14);
+    text-align: left;
+}
+.text7_1, .text7_3 {
+    font: var(--font-roboto-16-b);
+    text-align: left;
+}
+.text7_3, .text7_4 {
+    background-color: var(--bg-color-red);
+    opacity: 0.8;
 }
