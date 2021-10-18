@@ -270,13 +270,13 @@
 .linews {
     padding: 0 0 30px 0;
 }
-.news_heading:before {
+.news_heading_line::after {
     display: block;
-    width: 435px;
+    height: 435px;
     content: '';
-    position: absolute;
     border-left: 2px solid #d21111;
-    left: 10px;
+    left: -20px;
+    top: 10px;
 }
 /*.text_left_news, .announce, .calendar {*/
 /*    padding-left: 0;*/
