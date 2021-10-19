@@ -251,7 +251,7 @@
     <div class="container">
       <div
           class="row d-flex-column justify-content-center flex-lg-row flex-md-column flex-sm-column justify-content-lg-around justify-content-sm-around">
-        <div class="left_news col-12 col-xl-5 col-lg-5 col-md-12 col-sm-12">
+        <div class="left_news col-12 col-xl-5 col-lg-5 col-md-12 col-sm-12 pl-0">
           <div class="news_heading">
             <span class="news_heading_line">новости </span>
           </div>
@@ -410,7 +410,8 @@
             nextArrow: '.next_slide',
         });
         $('.calendar').datepicker({
-            language: "ru"
+            language: "ru",
+            calendarWeeks: true,
         });
     });
 </script>
