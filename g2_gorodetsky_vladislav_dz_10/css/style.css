@@ -1,0 +1,35 @@
+:root {
+    --font-raleway-16: normal normal bold 16px/20.66px "Raleway";
+    --font-raleway-24: normal normal normal 24px/28.18px "Raleway";
+    --font-roboto-10: normal normal normal 10px/11.72px "Roboto";
+    --font-roboto-11: normal normal normal 11px/12.89px "Roboto";
+    --font-roboto-12: normal normal normal 12px/16.88px "Roboto";
+    --font-roboto-14-16: normal normal normal 14px/16.41px "Roboto";
+    --font-roboto-14-22: normal normal normal 14px/22.97px "Roboto";
+    --font-roboto-16: normal normal normal 16px/22.5px "Roboto";
+    --font-roboto-16-b: normal normal bold 16px/22.5px "Roboto";
+    --font-roboto-18: normal normal normal 18px/21px "Roboto";
+    --font-roboto-24: normal normal normal 24px/28.18px "Roboto";
+    --font-roboto-cond-10: normal normal 400 10px/11.72px "Roboto Condensed";
+    --font-roboto-cond-12: normal normal 700 12px/14.06px "Roboto Condensed";
+    --font-roboto-cond-14: normal normal 700 14px/16.41px "Roboto Condensed";
+    --font-roboto-cond-16: normal normal 700 16px/18.75px "Roboto Condensed";
+    --font-color-red: #E41616;
+}
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+    padding-right: 0;
+    padding-left: 0;
+}
+._container {
+    width: 1442px;
+    padding-right: 0;
+    padding-left: 0;
+    margin: 0px auto;
+}
+

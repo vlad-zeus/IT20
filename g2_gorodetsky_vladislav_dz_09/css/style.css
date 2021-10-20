@@ -356,6 +356,13 @@
 .other_photo {
     max-width: 555px;
 }
+.big_photo, .footer_logo, .top_logo_img {
+    width: 100%;
+}
+.next_slide, .prev_slide {
+    display: inline-block;
+    cursor: pointer;
+}
 /*.news_heading_line::after {*/
 /*    display: block;*/
 /*    height: 435px;*/
