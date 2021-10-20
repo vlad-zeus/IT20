@@ -353,6 +353,9 @@
     padding-right: 0px;
     padding-left: 0px;
 }
+.other_photo {
+    max-width: 555px;
+}
 /*.news_heading_line::after {*/
 /*    display: block;*/
 /*    height: 435px;*/
