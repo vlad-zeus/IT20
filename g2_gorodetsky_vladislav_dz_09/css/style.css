@@ -28,15 +28,13 @@
     box-sizing: border-box;
     margin: 0;
     text-decoration: none;
-    padding-right: 0;
-    padding-left: 0;
+    /*padding-right: 0;*/
+    /*padding-left: 0;*/
 }
 
 @media (min-width: 1200px) {
     .container {
         width: 1110px;
-        padding-right: 0;
-        padding-left: 0;
     }
 }
 
@@ -70,11 +68,16 @@
 }
 
 .menu {
+    display: flex;
     padding: 0 12px 0 12px;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu:hover {
     background-color: #FF5858;
+    width: 100%;
+
 }
 
 .search_icon {
@@ -353,10 +356,7 @@
     padding-right: 0px;
     padding-left: 0px;
 }
-.other_photo {
-    max-width: 555px;
-}
-.big_photo, .footer_logo, .top_logo_img {
+.big_photo, .footer_logo, .top_logo_img, .photof2 {
     width: 100%;
 }
 .next_slide, .prev_slide {
