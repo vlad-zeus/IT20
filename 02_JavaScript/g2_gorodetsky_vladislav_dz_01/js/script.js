@@ -23,31 +23,31 @@ let favorite_sport = "силовой тренинг - для себя, Formula1,
 let hobby = "прочтение книги";
 
 console.log(
-    "Имя: " + NAME,
-    "\n" + "Фамилия: " + SURNAME,
-    "\n" + "Дата рождения: " + format_date(DATE_OF_BIRTH),
-    "\n" + "Возраст: " + age,
-    "\n" + "Пол: " + sex,
-    "\n" + "Рост: " + height,
-    "\n" + "Вест: " + weight,
-    "\n" + "Цвет глаз: " + COLOR_OF_EYES,
-    "\n" + "Семейное положение: " + family_status,
-    "\n" + "Дети: " + child,
-    "\n" + "Животные: " + animals,
-    "\n" + "Профессия: " + profession,
-    "\n" + "Музыкальные предпочтения: " + favorite_music_style,
-    "\n" + "Спорт: " + favorite_sport,
-    "\n" + "Хобби: " + hobby
+    "Имя: " + "\t" + "\t" + "\t" + NAME,
+    "\n" + "Фамилия: " + "\t" + "\t" + SURNAME,
+    "\n" + "Дата рождения: " + "\t" + "\t" + format_date(DATE_OF_BIRTH),
+    "\n" + "Возраст: " + "\t" + "\t" + age,
+    "\n" + "Пол: " + "\t" + "\t" + "\t" + sex,
+    "\n" + "Рост: " + "\t" + "\t" + "\t" + height,
+    "\n" + "Вес: " + "\t" + "\t" + "\t" + weight,
+    "\n" + "Цвет глаз: "  + "\t"  + "\t" + COLOR_OF_EYES,
+    "\n" + "Семейное положение: " + "\t" + family_status,
+    "\n" + "Дети: " + "\t" + "\t" + "\t" + child,
+    "\n" + "Животные: " + "\t" + "\t" + animals,
+    "\n" + "Профессия: " + "\t" + "\t" + profession,
+    "\n" + "Предпочитаемая музыка: " + "\t"  + favorite_music_style,
+    "\n" + "Спорт: " + "\t" + "\t" + "\t" + favorite_sport,
+    "\n" + "Хобби: " + "\t" + "\t" + "\t" + hobby
 );
 
 alert(
-    "Имя: " + NAME +
+    "Имя:" + NAME +
     "\n" + "Фамилия: " + SURNAME +
     "\n" + "Дата рождения: " + format_date(DATE_OF_BIRTH) +
     "\n" + "Возраст: " + age +
     "\n" + "Пол: " + sex +
     "\n" + "Рост: " + height +
-    "\n" + "Вест: " + weight +
+    "\n" + "Вес: " + weight +
     "\n" + "Цвет глаз: " + COLOR_OF_EYES +
     "\n" + "Семейное положение: " + family_status +
     "\n" + "Дети: " + child +
