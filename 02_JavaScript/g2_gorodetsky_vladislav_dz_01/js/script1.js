@@ -22,24 +22,6 @@ let favorite_music_style = "power metal, trash metal, industrial, darkwave";
 let favorite_sport = "силовой тренинг - для себя, Formula1, снукер - посмотреть";
 let hobby = "прочтение книги";
 
-console.log(
-    "Имя: " + NAME,
-    "\n" + "Фамилия: " + SURNAME,
-    "\n" + "Дата рождения: " + format_date(DATE_OF_BIRTH),
-    "\n" + "Возраст: " + age,
-    "\n" + "Пол: " + sex,
-    "\n" + "Рост: " + height,
-    "\n" + "Вест: " + weight,
-    "\n" + "Цвет глаз: " + COLOR_OF_EYES,
-    "\n" + "Семейное положение: " + family_status,
-    "\n" + "Дети: " + child,
-    "\n" + "Животные: " + animals,
-    "\n" + "Профессия: " + profession,
-    "\n" + "Музыкальные предпочтения: " + favorite_music_style,
-    "\n" + "Спорт: " + favorite_sport,
-    "\n" + "Хобби: " + hobby
-);
-
 alert(
     "Имя: " + NAME +
     "\n" + "Фамилия: " + SURNAME +
