@@ -17,7 +17,7 @@ for (let i = MIN_NUMBER; i <= MAX_NUMBER; i++) {
     }
 }
 alert(`Количество чисел кратных ${MULTIPLICITY}: ${count} 
-    \nСумма чисел равна: ${sum}`);
+     \nСумма чисел равна: ${sum}`);
 
 
 
