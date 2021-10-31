@@ -10,12 +10,10 @@ const MULTIPLICITY = 6;
 let sum = 0;
 let count = 0;
 for (let i = MIN_NUMBER; i <= MAX_NUMBER; i++) {
-    if (i !== 0) {
-        if (i % MULTIPLICITY === 0) {
-            console.log(i)
-            sum += i;
-            count += 1;
-        }
+    if (i !== 0 && i % MULTIPLICITY === 0) {
+        console.log(i)
+        sum += i;
+        count += 1;
     }
 }
 alert(`Количество чисел кратных ${MULTIPLICITY}: ${count} 
