@@ -8,7 +8,6 @@ let difference = 0;
 const MAX_COUNT = 10;
 
 for (let i = 0; i < MAX_COUNT; i++) {
-    console.log(i)
     temp_result = (max_number + min_number) / 2;
     confirm_result = confirm(`${temp_result} больше загаданного числа?`);
     if (confirm_result === true) {
