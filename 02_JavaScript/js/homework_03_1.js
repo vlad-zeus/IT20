@@ -4,12 +4,10 @@
 
 let a = prompt("Введите первое число", "0");
 let b = prompt("Введите второе число", "0");
-a = Number(a);
-b = Number(b);
-const MULTIPLICITY = 6;
 if (!isNaN(a) || !isNaN(b)) {
-  const MIN_NUMBER = Math.min(a, b);
-  const MAX_NUMBER = Math.max(a, b);
+  const MIN_NUMBER = Math.min(Number(a), Number(b));
+  const MAX_NUMBER = Math.max(Number(a), Number(b));
+  const MULTIPLICITY = 6;
   let sum = 0;
   let count = 0;
   for (let i = MIN_NUMBER; i <= MAX_NUMBER; i++) {
