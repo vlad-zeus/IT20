@@ -4,7 +4,7 @@
 
 let a = prompt("Введите первое число", "0");
 let b = prompt("Введите второе число", "0");
-if (!isNaN(a) || !isNaN(b)) {
+if (!isNaN(a) && !isNaN(b)) {
   const MIN_NUMBER = Math.min(Number(a), Number(b));
   const MAX_NUMBER = Math.max(Number(a), Number(b));
   const MULTIPLICITY = 6;
