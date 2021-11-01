@@ -4,24 +4,22 @@
 
 let a = prompt("Введите первое число", "0");
 let b = prompt("Введите второе число", "0");
-const MIN_NUMBER = Math.min(Number(a), Number(b));
-const MAX_NUMBER = Math.max(Number(a), Number(b));
-const MULTIPLICITY = 6;
-let sum = 0;
-let count = 0;
-for (let i = MIN_NUMBER; i <= MAX_NUMBER; i++) {
+if (!isNaN(a) || !isNaN(b)) {
+  const MIN_NUMBER = Math.min(Number(a), Number(b));
+  const MAX_NUMBER = Math.max(Number(a), Number(b));
+  const MULTIPLICITY = 6;
+  let sum = 0;
+  let count = 0;
+  for (let i = MIN_NUMBER; i <= MAX_NUMBER; i++) {
     if (i !== 0 && i % MULTIPLICITY === 0) {
-        console.log(i)
-        sum += i;
-        count += 1;
+      console.log(i);
+      sum += i;
+      count += 1;
     }
+  }
+  alert(`Количество чисел кратных ${MULTIPLICITY}: ${count} 
+       \nСумма чисел равна: ${sum}`);
+} else {
+  alert(`Введите число!`)
+  window.location.reload();
 }
-alert(`Количество чисел кратных ${MULTIPLICITY}: ${count} 
-     \nСумма чисел равна: ${sum}`);
-
-
-
-
-
-
-
