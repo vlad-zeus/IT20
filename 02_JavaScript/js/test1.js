@@ -1,22 +1,8 @@
-let town = prompt('Укажите город', '');
-console.log(town);
-let town1;
-let res = town.slice(-1).toLowerCase();
-let res2;
-let i = 0;
-let temp_symbol = res;
-
-console.log(res);
-
-do {
-    town1 = prompt("Укажите город", '');
-    res2 = town1.slice(0, 1).toLowerCase();
-    console.log(res2);
-    res = temp_symbol;
-    if (res === res2) {
-        console.log(res, res2);
-        temp_symbol = town1.slice(-1).toLowerCase();
-        i++;
-    }
-} while (res === res2);
-alert(`Игра окончена. Ваши очки: ${i}`);
+let text = 'Иванов Сергей Петрович';
+function get_short_fio(full_fio) {
+    let fio = text.split(' ');
+    console.log(fio);
+    let short_fio = text[0] + text[1].slice(0, 1) + "." +text[2].slice(0, 1) + ".";
+    return short_fio
+}
+console.log(get_short_fio());
