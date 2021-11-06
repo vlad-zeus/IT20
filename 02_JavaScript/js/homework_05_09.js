@@ -1,14 +1,13 @@
-/*Напишите функцию get_short_fio(full_fio), которая преобразует полное ФИО full_fio в краткое.
-Например: get_short_fio("Иванов Сергей Петрович"), функция должна вернуть "Иванов С.П."*/
+/*Напишите функцию get_order(string), которая отсортирует все слова в заданном предложении string в алфавитном порядке.
+Например: get_order("ноты акустика гитара"), функция должна вернуть "акустика гитара ноты"*/
 
-function get_short_fio(full_fio) {
-    if (typeof full_fio !== "string") {
+function get_order(string) {
+    if (typeof string !== "string") {
         return null;
     }
-    let fio_array = full_fio.split(" ")
-    return result = fio_array[0] + " " + fio_array[1].slice(0, 1) + ". " + fio_array[2].slice(0, 1)+ ".";
+    return string.split(' ').sort().join(" ");
 
 }
-let fio = 'Иванов Сергей Петрович'
-let fio_result = get_short_fio(fio);
-console.log(fio_result);
+let string_for_fnc = "Ut amet qui id deserunt nisi consectetur sint deserunt sit proident aliquip quis qui. Velit id qui pariatur aute fugiat id sunt dolor duis. Culpa do dolor non laboris et sit veniam est dolore duis ea. Ea veniam cillum cillum proident deserunt nostrud laboris sit in aliqua pariatur sit ex. Est dolore occaecat nostrud ipsum sunt magna laboris consequat dolor enim voluptate minim."
+let get_order_result = get_order(string_for_fnc);
+console.log(get_order_result);
