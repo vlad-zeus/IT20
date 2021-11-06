@@ -8,10 +8,7 @@ function get_uniq_arr(arr) {
     for (let i = 0; i < arr.length; i++) {
         let index = 0;
         while (index !== -1) {
-            console.log(arr[i], arr[i+1], i, i+1);
             index = arr.indexOf(arr[i],i+1);
-            let copy = arr.slice();
-            console.log(copy)
             if (index !== -1) {
                 arr.splice(index, 1)
             }
