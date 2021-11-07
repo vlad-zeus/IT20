@@ -5,11 +5,8 @@ function search_string(search, string) {
     if (typeof search !== "string" || typeof string !== "string" ) {
         return null;
     }
-    search = search.toLowerCase();
-    string = string.toLowerCase();
 
-
-    return string.indexOf(search) >= 0 ? true : false;
+    return string.toLowerCase().indexOf(search.toLowerCase()) >= 0 ? true : false;
 }
 
 let search_for_fnc = "amet";
