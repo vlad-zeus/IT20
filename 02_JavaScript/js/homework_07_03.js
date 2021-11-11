@@ -49,20 +49,15 @@ function Calculator(name) {
                 break;
         }
         let result = clean_arg[0];
-        if (math_symbol === '+' || math_symbol === '*') {
-            for (let j = 1; j < clean_arg.length; j++) {
-                result = eval(result + math_symbol + clean_arg[j]);
-            }
-        } else {
-            if (clean_arg_length < 2) {
-                console.log(`Введено недостаточное количество цифровых параметров - ${clean_arg.length}!`)
-            } else if (clean_arg_length > 2) {
-                console.log(`Введено больше цифровых параметров, чем необходимо - ${clean_arg.length}! Излишние параметры проигнорированы!`)
-                result = eval(clean_arg[0] + math_symbol + clean_arg[1]);
-            } else {
-                result = eval(clean_arg[0] + math_symbol + clean_arg[1]);
-            }
+        if (clean_arg_length < 2) {
+            console.log(`Введено недостаточное количество цифровых параметров - ${clean_arg_length}!`)
+        } else if (clean_arg_length > 2) {
+            console.log(`Введено больше цифровых параметров, чем необходимо - ${clean_arg_length}! Излишние параметры проигнорированы!`)
         }
+        for (let j = 1; j < clean_arg.length; j++) {
+            result = eval(result + math_symbol + clean_arg[j]);
+        }
+
         let date_for_history = new Date().getDate() + '.' + eval(new Date().getMonth() + 1) + '.' + new Date().getFullYear() + ' ' + new Date().getHours() + ':' + new Date().getMinutes();
         this.history.push(`${this.name} ${date_for_history}: ${word_for_history} = ${result}, (${clean_arg})`)
         return result;
@@ -80,6 +75,7 @@ function Calculator(name) {
         return this.calculate_result('seg', arg);
     }
 }
+
 let calculator = new Calculator('my_calc');
 console.log(calculator.summation(1, 2, 'dfyz', 48));
 console.log(calculator.subtraction(25));

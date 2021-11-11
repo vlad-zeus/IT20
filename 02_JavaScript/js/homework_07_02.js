@@ -15,6 +15,7 @@ function Calculator(name) {
     this.calculate_result = function (param1, param2) {
         let clean_arg = this.check_param(param2);
         let math_symbol;
+        let clean_arg_length = clean_arg.length;
         switch (param1) {
             case 'sum':
                 math_symbol = '+';
@@ -29,21 +30,14 @@ function Calculator(name) {
                 math_symbol = '/';
                 break;
         }
-        console.log(math_symbol);
         let result = clean_arg[0];
-        if (math_symbol === '+' || math_symbol === '*') {
-            for (let j = 1; j < clean_arg.length; j++) {
-                result = eval(result + math_symbol + clean_arg[j]);
-            }
-        } else {
-            if (clean_arg.length < 2) {
-                console.log(`Введено недостаточное количество цифровых параметров - ${clean_arg.length}!`)
-            } else if (clean_arg.length > 2) {
-                console.log(`Введено больше цифровых параметров, чем необходимо - ${clean_arg.length}! Излишние параметры проигнорированы!`)
-                result = eval(clean_arg[0] + math_symbol + clean_arg[1]);
-            } else {
-                result = eval(clean_arg[0] + math_symbol + clean_arg[1]);
-            }
+        if (clean_arg_length < 2) {
+            console.log(`Введено недостаточное количество цифровых параметров - ${clean_arg_length}!`)
+        } else if (clean_arg_length > 2) {
+            console.log(`Введено больше цифровых параметров, чем необходимо - ${clean_arg_length}! Излишние параметры проигнорированы!`)
+        }
+        for (let j = 1; j < clean_arg.length; j++) {
+            result = eval(result + math_symbol + clean_arg[j]);
         }
         return result;
     }
