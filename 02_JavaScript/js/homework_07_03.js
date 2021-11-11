@@ -12,7 +12,7 @@ function Calculator(name) {
     };
     this.history_destruct = function (param) {
         param.splice(0);
-        return console.log('История очищена!')
+        return 'История очищена!'
     };
     this.check_param = function (param) {
         let result_arr = [];
