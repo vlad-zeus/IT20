@@ -57,7 +57,7 @@ function Calculator(name) {
         }
 
         let date_for_history = (new Date().toLocaleString()).replace(',', '');
-        this.history.push(`${this.name} ${date_for_history}: ${word_for_history} = ${result}, (${clean_arg})`)
+        this.history.push(`${this.name} (${date_for_history}): ${word_for_history} = ${result}, (${clean_arg})`)
         return result;
     };
 
