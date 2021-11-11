@@ -49,11 +49,6 @@ function Calculator(name) {
                 break;
         }
         let result = clean_arg[0];
-        if (clean_arg_length < 2) {
-            console.log(`Введено недостаточное количество цифровых параметров - ${clean_arg_length}!`)
-        } else if (clean_arg_length > 2) {
-            console.log(`Введено больше цифровых параметров, чем необходимо - ${clean_arg_length}! Излишние параметры проигнорированы!`)
-        }
         for (let j = 1; j < clean_arg.length; j++) {
             result = eval(result + math_symbol + clean_arg[j]);
         }
@@ -65,22 +60,22 @@ function Calculator(name) {
     this.summation = function (...arg) {
         return this.calculate_result('sum', arg);
     }
-    this.subtraction = function (...arg) {
+    this.subtraction = function (p1, p2) {
         return this.calculate_result('sub', arg);
     }
     this.multiplication = function (...arg) {
         return this.calculate_result('mul', arg);
     }
-    this.segment = function (...arg) {
+    this.segment = function (p1, p2) {
         return this.calculate_result('seg', arg);
     }
 }
 
 let calculator = new Calculator('my_calc');
 console.log(calculator.summation(1, 2, 'dfyz', 48));
-console.log(calculator.subtraction(25));
+console.log(calculator.subtraction(25, 88));
 console.log(calculator.multiplication(18, 28, 'dfyz', 48));
 console.log(calculator.history_read(calculator.history));
 console.log(calculator.history_destruct(calculator.history));
-console.log(calculator.segment(98, 19, 5, 3));
+console.log(calculator.segment(98, 19));
 console.log(calculator.history_read(calculator.history));
