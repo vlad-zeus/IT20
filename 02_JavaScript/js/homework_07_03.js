@@ -1,6 +1,7 @@
 /* Калькулятор должен хранить историю действий в виде строки в таком формате: Имя калькулятора (Дата Время): действие, результат, (параметры).
 Например после действия сумма в истории должна появится такая запись: "Мой калькулятор (8.11.2021 20:30): сумма = 10, (5, 5)"
 Калькулятор должен уметь вывести историю действий в консоль и уметь очищать историю действий. */
+
 function Calculator(name) {
     this.name = name;
     this.history = [];
@@ -27,9 +28,9 @@ function Calculator(name) {
     };
 
     this.calculate_result = function (param1, param2) {
-        let clean_arg = this.check_param(param2);
         let math_symbol;
         let word_for_history;
+
         switch (param1) {
             case 'sum':
                 math_symbol = '+';
@@ -49,6 +50,7 @@ function Calculator(name) {
                 break;
         }
 
+        let clean_arg = this.check_param(param2);
         let result = clean_arg[0];
         for (let j = 1; j < clean_arg.length; j++) {
             result = eval(result + math_symbol + clean_arg[j]);
@@ -58,6 +60,7 @@ function Calculator(name) {
         this.history.push(`${this.name} ${date_for_history}: ${word_for_history} = ${result}, (${clean_arg})`)
         return result;
     };
+
     this.summation = function (...arg) {
         return this.calculate_result('sum', arg);
     };
