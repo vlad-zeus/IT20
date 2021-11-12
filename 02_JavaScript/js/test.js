@@ -1,86 +1,50 @@
-/* Калькулятор должен хранить историю действий в виде строки в таком формате: Имя калькулятора (Дата Время): действие, результат, (параметры).
-Например после действия сумма в истории должна появится такая запись: "Мой калькулятор (8.11.2021 20:30): сумма = 10, (5, 5)"
-Калькулятор должен уметь вывести историю действий в консоль и уметь очищать историю действий. */
-function Calculator(name) {
-    this.name = name;
-    this.history = [];
-    this.history_read = function (param) {
-        for (let i = 0; i < param.length; i++) {
-            console.log(param[i]);
-        }
-        return 'Вывод истории завершен'
-    };
-    this.history_destruct = function (param) {
-        param.splice(0);
-        return console.log('История очищена!')
-    };
-    this.check_param = function (param) {
-        let result_arr = [];
-        for (let i = 0; i < param.length; i++) {
-            if (!isNaN(param[i])) {
-                result_arr.push(param[i]);
-            }
-        }
-        return result_arr;
+function create_blue_sqares() {
+    for(let i = 1; i <= 10; i++) {
+        let a1 = document.createElement('div');
+        a1.setAttribute('style', 'background: blue; width: 50px; height: 50px; margin: 10px');
+        document.body.prepend(a1);
     }
-    this.calculate_result = function (param1, param2) {
-        let clean_arg = this.check_param(param2);
-        let math_symbol;
-        let word_for_history;
-        let clean_arg_length = clean_arg.length;
-        switch (param1) {
-            case 'sum':
-                math_symbol = '+';
-                word_for_history = 'сумма'
-                break;
-            case 'sub':
-                math_symbol = '-';
-                word_for_history = 'разность'
-                clean_arg.splice(2);
-                break;
-            case 'mul':
-                math_symbol = '*';
-                word_for_history = 'произведение'
-                break;
-            case 'seg':
-                math_symbol = '/';
-                word_for_history = 'частное'
-                clean_arg.splice(2);
-                break;
-        }
-        let result = clean_arg[0];
-        if (clean_arg_length < 2) {
-            console.log(`Введено недостаточное количество цифровых параметров - ${clean_arg_length}!`)
-        } else if (clean_arg_length > 2) {
-            console.log(`Введено больше цифровых параметров, чем необходимо - ${clean_arg_length}! Излишние параметры проигнорированы!`)
-        }
-        for (let j = 1; j < clean_arg.length; j++) {
-            result = eval(result + math_symbol + clean_arg[j]);
-        }
+}
+setTimeout(create_blue_sqares, 3000);
 
-        let date_for_history = new Date().getDate() + '.' + eval(new Date().getMonth() + 1) + '.' + new Date().getFullYear() + ' ' + new Date().getHours() + ':' + new Date().getMinutes();
-        this.history.push(`${this.name} ${date_for_history}: ${word_for_history} = ${result}, (${clean_arg})`)
-        return result;
+// 2. Изменить цвет каждого квадрата на зеленый, и увеличить размер до 100 на 100 пикселей.
+function create_green_sqares() {
+    let search = document.getElementsByTagName('div');
+    for(let i = 0; i < search.length; i++) {
+        search[i].setAttribute('style', 'background: green; width: 100px; height: 100px; margin: 10px');
     }
-    this.summation = function (...arg) {
-        return this.calculate_result('sum', arg);
-    }
-    this.subtraction = function (...arg) {
-        return this.calculate_result('sub', arg);
-    }
-    this.multiplication = function (...arg) {
-        return this.calculate_result('mul', arg);
-    }
-    this.segment = function (...arg) {
-        return this.calculate_result('seg', arg);
+}
+setTimeout(create_green_sqares, 6000);
+
+// 3. Изменить цвет каждого 3-го квадрата на красный, остальных на желтый.
+
+function create_multicolored_sqares() {
+    let search = document.getElementsByTagName('div');
+    console.log()
+    for(let i = 0; i < search.length; i++) {
+        if(i === 2 || i === 5 || i === 8) {
+            search[i].setAttribute('style', 'background: red; width: 100px; height: 100px; margin: 10px');
+
+        } else {
+            search[i].setAttribute('style', 'background: yellow; width: 100px; height: 100px; margin: 10px');
+        }
     }
 }
 
-let calculator = new Calculator('my_calc');
-console.log(calculator.summation(1, 2, 'dfyz', 48));
-console.log(calculator.subtraction(25));
-console.log(calculator.multiplication(18, 28, 'dfyz', 48));
-console.log(calculator.history_read(calculator.history));
-console.log(calculator.history_destruct(calculator.history));
-console.log(calculator.segment(98, 19, 5, 3));
-console.log(calculator.history_read(calculator.history));
+setTimeout(create_multicolored_sqares, 9000);
+
+// 4. Удалить все квадраты, и сделать фон страницы черным.
+
+function delete_all() {
+    let search = document.getElementsByTagName('div');
+    let div_length = search.length;
+    console.log(search.length);
+    for(let i = (search.length - 1); i >= 0; i--) {
+        console.log(i);
+        console.log(search.length);
+        search[i].remove();
+    }
+    document.body.style.backgroundColor = 'black';
+}
+
+setTimeout(delete_all, 12000);
