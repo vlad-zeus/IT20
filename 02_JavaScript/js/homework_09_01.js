@@ -75,7 +75,7 @@ $(document).ready(function () {
 
     $(remove_color_square = function (color) {
         $(".square").filter(function() {
-            return $(this).css('background-color') == color;
+            return $(this).css('background-color') === color;
         }).remove();
 
     })
