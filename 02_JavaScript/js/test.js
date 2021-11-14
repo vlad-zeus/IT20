@@ -1,50 +1,55 @@
-function create_blue_sqares() {
-    for(let i = 1; i <= 10; i++) {
-        let a1 = document.createElement('div');
-        a1.setAttribute('style', 'background: blue; width: 50px; height: 50px; margin: 10px');
-        document.body.prepend(a1);
-    }
-}
-setTimeout(create_blue_sqares, 3000);
+let square = document.createElement('div');
 
-// 2. Изменить цвет каждого квадрата на зеленый, и увеличить размер до 100 на 100 пикселей.
-function create_green_sqares() {
-    let search = document.getElementsByTagName('div');
-    for(let i = 0; i < search.length; i++) {
-        search[i].setAttribute('style', 'background: green; width: 100px; height: 100px; margin: 10px');
-    }
-}
-setTimeout(create_green_sqares, 6000);
 
-// 3. Изменить цвет каждого 3-го квадрата на красный, остальных на желтый.
-
-function create_multicolored_sqares() {
-    let search = document.getElementsByTagName('div');
-    console.log()
-    for(let i = 0; i < search.length; i++) {
-        if(i === 2 || i === 5 || i === 8) {
-            search[i].setAttribute('style', 'background: red; width: 100px; height: 100px; margin: 10px');
-
-        } else {
-            search[i].setAttribute('style', 'background: yellow; width: 100px; height: 100px; margin: 10px');
-        }
-    }
+function blocks(squareBlue) {
+    let square = document.createElement('div');
+    square.style.height = '50px';
+    square.style.width = '50px';
+    square.style.margin = '10px';
+    square.style.background = '#0000FF';
+    return square;
 }
 
-setTimeout(create_multicolored_sqares, 9000);
 
-// 4. Удалить все квадраты, и сделать фон страницы черным.
 
-function delete_all() {
-    let search = document.getElementsByTagName('div');
-    let div_length = search.length;
-    console.log(search.length);
-    for(let i = (search.length - 1); i >= 0; i--) {
-        console.log(i);
-        console.log(search.length);
-        search[i].remove();
-    }
-    document.body.style.backgroundColor = 'black';
+function blocks2(squareGreen) {
+    let square2 = document.body.appendChild(blocks());
+
+    square2.style.height = '100px';
+    square2.style.width = '100px';
+    square2.style.background = '#008000';
+
+    return square2;
 }
 
-setTimeout(delete_all, 12000);
+let i = 0;
+
+function blocks3(index) {
+    let square3 = document.body.appendChild(blocks2());
+    console.log(square3);
+    console.log(index);
+    console.log(square3[index]);
+    if (index % 3 === 0) {
+        square3[index].style.background = '#FF0000';
+    } else {
+        square3[index].style.background = '#FFFF00';
+    }
+
+    return square3;
+}
+
+// setTimeout(blocks, 3000);
+// setTimeout(blocks2, 6000);
+// setTimeout(blocks3, 9000);
+
+
+
+for (let i = 0; i < 10; i++) {
+    document.body.appendChild(blocks());
+}
+for (let i = 0; i < 10; i++) {
+    document.body.appendChild(blocks2());
+}
+for (let i = 0; i < 10; i++) {
+    document.body.appendChild(blocks3(i));
+}

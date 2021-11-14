@@ -51,10 +51,11 @@ function replace_style_square_to_yellow_red(color1, color2){
 }
 
 function delete_all(color) {
-    let elements = document.querySelectorAll('.square');
+    //в принципе этот блок не нужен. Поскольку мы грохаем контейнер со всеми потомками. Но оставлю. Если его раскоментировать, то сначал найдет и грохнет дивы.
+/*    let elements = document.querySelectorAll('.square');
     for (let elem of elements) {
         elem.remove();
-    }
+    }*/
     document.querySelector('.container').remove();
     document.body.style.backgroundColor = color;
 }
