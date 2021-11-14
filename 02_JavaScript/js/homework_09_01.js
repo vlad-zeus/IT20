@@ -33,13 +33,11 @@ $(document).ready(function () {
     });
 
     $(replace_square_color_to_purple = function (color, height, width) {
-        $('.square').each(function (index, element) {
-            $(element).css({
-                "height": height,
-                "width": width,
-                "background-color": color,
-            })
-        });
+        $('.square').css({
+            "height": height,
+            "width": width,
+            "background-color": color,
+        })
     });
 
     $(add_number = function () {
@@ -57,12 +55,12 @@ $(document).ready(function () {
         $('.square').each(function (index, element) {
             if ((index + 1) % 3 === 0) {
                 $(element).css({
-                    'background-color': color1
+                    "background-color": color1
                 })
             }
             if ((index + 1) % 3 !== 0 && (index + 1) % 15 !== 0 && index <= 6) {
                 $(element).css({
-                    'background-color': color3
+                    "background-color": color3
                 })
             }
             if ((index + 1) % 15 === 0) {
@@ -74,8 +72,8 @@ $(document).ready(function () {
     });
 
     $(remove_color_square = function (color) {
-        $(".square").filter(function() {
-            return $(this).css('background-color') === color;
+        $(".square").filter(function () {
+            return $(this).css("background-color") === color;
         }).remove();
 
     })
