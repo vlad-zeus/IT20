@@ -19,7 +19,7 @@
             return response.json();
           })
           .then((data) => {
-            console.log(data);
+            console.log(JSON.stringify(data));
           });
   formatGoogleCalendar.init({
     calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/vgorodetsky@gmail.com/events?key=AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q',
