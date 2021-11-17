@@ -13,6 +13,13 @@
 </ul>
 <script src="js/google-calendar.js"></script>
 <script>
+  fetch('https://www.googleapis.com/calendar/v3/calendars/vgorodetsky@gmail.com/events?key=AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q')
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+          });
   formatGoogleCalendar.init({
     calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/vgorodetsky@gmail.com/events?key=AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q',
     past: true,
