@@ -1,6 +1,8 @@
-/*Написать код, который создаст на странице 2 прямоугольника разного цвета и размера.
-При наведении курсора мыши на прямоугольник вывести в консоль размер этого прямоугольника.
-При клике на прямоугольник - выдать уведомление, в котором будет русское название цвета этого прямоугольника.*/
+/*С помощью метода fetch получить масcив данных по Google Api Calendar или {JSON} Placeholder Fake Api
+и вывести его на страницу с версткой в виде блоков.
+Каждый блок должен содержать стилизованный текст, картинку (статичную по умолчанию, или рандомную, или по ссылке из данных)
+и 2 кнопки с такими действиями: alert([любая инфа по этому объекту]) и удаление блока со страницы.
+Генерацию блоков обертнуть в асинхронную функцию, добавление блоков в дерево сделать синхронной функцией.*/
 
 $(document).ready(function () {
 
@@ -15,33 +17,12 @@ $(document).ready(function () {
             .prependTo("body");
     });
 
-    $(create_square = function (number, color, height, width, div_class) {
-        let color_in_word;
-        if(color === '#00aaff') {
-            color_in_word = 'голубой';
-        } else {
-            color_in_word = 'красный';
-        }
-        for (let i = 0; i < number; i++) {
-            $('<div class="square"></div>')
-                .css({
-                    "height": height,
-                    "width": width,
-                    "margin-top": "3px",
-                    "background-color": color,
-                })
-                .addClass(div_class)
-                .mouseenter(function () {
-                    console.log(this.clientHeight, this.clientWidth)
-                })
-                .on('click', function (e) {
-                    alert(`Цвет прямоугольника - ${color_in_word}`)
-                })
-                .appendTo("div.container");
-        }
+    $(get_calendar_event = function (date1, date2) {
+        let link = JSON.stringify(`https://www.googleapis.com/calendar/v3/calendars/vgorodetsky@gmail.com/events?key=AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q&singleEvents=true&orderBy=starttime&timeMin=${date1}&timeMax=${date2}`)
+        console.log(link)
     });
 
-    setTimeout(create_square, 0, 1, '#00aaff', '170px', '70px', 'first_square');
-    setTimeout(create_square, 0, 1, '#d21111', '70px', '720px', 'second_square');
+    get_calendar_event('2021-10-03T10:00:00-07:00', '2021-12-31T10:00:00-07:00')
+
 
 });
