@@ -18,8 +18,8 @@ $(document).ready(function () {
         });
 
         function get_calendar_event(date1, date2) {
-            let link = JSON.stringify(`https://www.googleapis.com/calendar/v3/calendars/vgorodetsky@gmail.com/events?key=AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q&singleEvents=true&orderBy=starttime&timeMin=${date1}&timeMax=${date2}`)
-            console.log(link);
+            let link = fetch(`https://www.googleapis.com/calendar/v3/calendars/vgorodetsky@gmail.com/events?key=AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q&singleEvents=true&orderBy=starttime&timeMin=${date1}&timeMax=${date2}`)
+            console.log(JSON.stringify(link));
         }
     get_calendar_event('2021-10-03T10:00:00-07:00', '2021-12-31T10:00:00-07:00');
     });
