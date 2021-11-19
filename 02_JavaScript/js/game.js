@@ -265,7 +265,7 @@ $(document).ready(function () {
         );
 
     }
-
+    console.log(objects);
 
     let r = new Racket({
         x: 0,
@@ -276,17 +276,7 @@ $(document).ready(function () {
     document.documentElement.onmousemove = r.doMove.bind(r);
     objects.push(r);
 
-    document.onkeydown = function (event) {
-        console.log(event);
-        if (event.key == 'ArrowRight') {
-            r.style.left = (left - 3) + 'px';
-            left++;
-        }
-        if (event.key == 'ArrowLeft') {
-            r.style.right = (left + 3) + 'px';
-            left--;
-        }
-    }
+
 
 
     function checkCollision(objectA, objectB) {
@@ -342,10 +332,19 @@ $(document).ready(function () {
                     ball.y > brick.y &&
                     ball.y < brick.y + brick.height
                 ) {
-                    ball.invertDirectionX();
-                    console.log(brick, brick.div, brick.id);
-                    let for_delete1 = document.getElementById(brick.id);
-                    for_delete1.remove();
+                    ball.invertDirectionY();
+                    console.log(objects);
+                    console.log(brick.id);
+                    let for_delete2 = document.getElementById(brick.id);
+                    for_delete2.remove();
+                    for (let i = 0; i < objects.length; i++) {
+                        console.log(i);
+                        let new_string = Object.values(objects[i]);
+                        console.log(new_string)
+                        if (new_string.indexOf(brick.id) !== -1) {
+                            objects.splice(i, 1)
+                        }
+                    }
                 }
 
                 if (
@@ -354,9 +353,18 @@ $(document).ready(function () {
                     ball.y === brick.y + brick.height
                 ) {
                     ball.invertDirectionY();
-                    console.log(brick, brick.div, brick.id);
+                    console.log(objects);
+                    console.log(brick.id);
                     let for_delete2 = document.getElementById(brick.id);
                     for_delete2.remove();
+                    for (let i = 0; i < objects.length; i++) {
+                        console.log(i);
+                        let new_string = Object.values(objects[i]);
+                        console.log(new_string)
+                        if (new_string.indexOf(brick.id) !== -1) {
+                            objects.splice(i, 1)
+                        }
+                    }
                 }
             }
 
