@@ -6,25 +6,34 @@
 
 $(document).ready(function () {
 
-        $(create_container = function () {
-            $('<div class="container"></div>')
-                .css({
-                    "margin": "0 auto!",
-                    "display": "flex",
-                    "flex-direction": "column",
-                    "align-items": "center",
-                })
-                .prependTo("body");
-        });
-    https://www.googleapis.com/calendar/v3/calendars/vgorodetsky@gmail.com/events?key=AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q&singleEvents=true&orderBy=starttime&timeMin=2018-06-03T10:00:00-07:00&timeMax=2022-06-03T10:00:00-07:00
-        function get_calendar_event(date1, date2) {
-            fetch('https://www.googleapis.com/calendar/v3/calendars/vgorodetsky@gmail.com/events?key=AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q&singleEvents=true&orderBy=starttime&timeMin=2018-06-03T10:00:00-07:00&timeMax=2022-06-03T10:00:00-07:00')
-                .then((response) => {
-                    return response.json();
-                })
-                .then((data) => {
-                    console.log(data.items);
-                });
-        }
-    get_calendar_event('2021-10-03T10:00:00-07:00', '2021-12-31T10:00:00-07:00');
+    $(create_container = function () {
+        $('<div class="container"></div>')
+            .css({
+                "margin": "0 auto!",
+                "display": "flex",
+                "flex-direction": "column",
+                "align-items": "center",
+            })
+            .prependTo("body");
     });
+
+    let calendar_events;
+    let page_content;
+
+    async function get_calendar_event(email, api_key, min_date, max_date) {
+        fetch(`https://www.googleapis.com/calendar/v3/calendars/${email}/events?key=${api_key}&singleEvents=true&orderBy=starttime&timeMin=${min_date}&timeMax=${max_date}`)
+            .then((response) => {
+                return response.json();
+            })
+            .then((json) => {
+                calendar_events = JSON.stringify(json.items);
+                calendar_events.forEach(one_event => {
+                    page_content = ``;
+                })
+                console.log(calendar_event);
+            });
+    }
+
+    get_calendar_event('vgorodetsky@gmail.com','AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q','2021-10-03T10:00:00-07:00', '2021-12-31T10:00:00-07:00');
+
+});
