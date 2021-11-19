@@ -25,10 +25,10 @@ $(document).ready(function () {
               display: inline-block;
               position: absolute;
               border-radius: 50%;
-              left: ${this.x};
-              top: ${this.y};
-              width: ${this.diametr};
-              height: ${this.diametr};
+              left: ${this.x}px;
+              top: ${this.y}px;
+              width: ${this.diametr}px;
+              height: ${this.diametr}px;
               background: ${this.color}`;
             result.innerText = this.id;
             document.documentElement.append(result);
@@ -43,8 +43,8 @@ $(document).ready(function () {
         };
 
         this.renderView = function () {
-            this.div.style.left = this.x;
-            this.div.style.top = this.y;
+            this.div.style.left = this.x + 'px';
+            this.div.style.top = this.y + 'px';
         };
 
         this.live = function () {
@@ -64,33 +64,68 @@ $(document).ready(function () {
     function Wall(options) {
         this.id = Math.trunc(Math.random() * 1000);
         this.x = options.x;
-        console.log("x", options.x);
         this.y = options.y;
-        console.log("y", options.y);
         this.width = options.width;
-        console.log("width", options.width);
         this.height = options.height;
-        console.log("height", options.height);
 
         this.createView = function () {
             let result = document.createElement("div");
             result.style.cssText = `
-      position: absolute;
-      left: ${this.x}px;
-      top: ${this.y}px;
-      width: ${this.width}px;
-      height: ${this.height}px;
-      background: green;
-      `;
+              position: absolute;
+              left: ${this.x}px;
+              top: ${this.y}px;
+              width: ${this.width}px;
+              height: ${this.height}px;
+              background: green;
+              `;
             document.documentElement.append(result);
             return result;
         };
 
         this.div = this.createView();
 
-        this.renderState = function () {};
+        this.renderState = function () {
+        };
 
-        this.renderView = function () {};
+        this.renderView = function () {
+        };
+
+        this.live = function () {
+            this.renderState();
+            this.renderView();
+        };
+    }
+
+    function Brick(options) {
+        this.id = Math.trunc(Math.random() * 1000);
+        this.x = options.x;
+        this.y = options.y;
+        this.width = options.width;
+        this.height = options.height;
+
+        this.createView = function () {
+            let result = document.createElement("div");
+            result.className = this.id;
+            result.id = this.id;
+            result.style.cssText = `
+              position: absolute;
+              left: ${this.x}px;
+              top: ${this.y}px;
+              width: ${this.width}px;
+              height: ${this.height}px;
+              background: khaki;
+              `;
+            document.documentElement.append(result);
+            return result;
+        };
+
+        this.div = this.createView();
+
+        this.renderState = function () {
+        };
+
+        this.renderView = function () {
+        };
 
         this.live = function () {
             this.renderState();
@@ -110,13 +145,13 @@ $(document).ready(function () {
         this.createView = function () {
             let result = document.createElement("div");
             result.style.cssText = `
-      position: absolute;
-      left: ${this.x};
-      top: ${this.y};
-      width: ${this.width};
-      height: ${this.height};
-      background: red;
-      `;
+              position: absolute;
+              left: ${this.x}px;
+              top: ${this.y}px;
+              width: ${this.width}px;
+              height: ${this.height}px;
+              background: red;
+              `;
 
             document.documentElement.append(result);
             return result;
@@ -124,10 +159,11 @@ $(document).ready(function () {
 
         this.div = this.createView();
 
-        this.renderState = function () {};
+        this.renderState = function () {
+        };
 
         this.renderView = function () {
-            this.div.style.left = this.x;
+            this.div.style.left = this.x + 'px';
         };
 
         this.doMove = function (event) {
@@ -146,20 +182,20 @@ $(document).ready(function () {
         new Ball({
             diametr: 50,
             color: "blue",
-            x: 100,
-            y: 100,
+            x: 200,
+            y: 200,
             startDirectionX: -1,
         })
     );
 
-    objects.push(
-        new Ball({
-            diametr: 40,
-            color: "orange",
-            x: 200,
-            y: 200,
-        })
-    );
+    // objects.push(
+    //     new Ball({
+    //         diametr: 40,
+    //         color: "orange",
+    //         x: 300,
+    //         y: 300,
+    //     })
+    // );
 
     objects.push(
         new Wall({
@@ -187,6 +223,50 @@ $(document).ready(function () {
             height: document.documentElement.clientHeight,
         })
     );
+
+    let brickX = 11;
+    let brickY = 21;
+
+    function rowBricks(index, y) {
+        console.log(index, y)
+        if (index > 10 && index <= 20 && y === 21) {
+            y += 21;
+            console.log("1", y)
+        }
+        if (index > 20 && index <= 30 && y === 42) {
+            y += 21;
+            console.log("2", y)
+        }
+        if (index > 30 && index <= 40 && y === 63) {
+            y += 21;
+            console.log("3", y)
+        }
+        if (index > 40 && index <= 50 && y === 84) {
+            y += 21;
+            console.log("4", y)
+        }
+        return y
+    }
+
+    for (let i = 1; i < 49; i++) {
+        if (brickX < 470){
+            brickX += 51
+        } else {
+            brickX = 11
+        }
+        console.log("x", brickX)
+        objects.push(
+            new Brick({
+                x: brickX,
+                y: brickY = rowBricks(i, brickY),
+                width: 50,
+                height: 20,
+            })
+        );
+
+    }
+
+
     let r = new Racket({
         x: 0,
         y: document.documentElement.clientHeight - 40,
@@ -196,20 +276,38 @@ $(document).ready(function () {
     document.documentElement.onmousemove = r.doMove.bind(r);
     objects.push(r);
 
+    document.onkeydown = function (event) {
+        console.log(event);
+        if (event.key == 'ArrowRight') {
+            r.style.left = (left - 3) + 'px';
+            left++;
+        }
+        if (event.key == 'ArrowLeft') {
+            r.style.right = (left + 3) + 'px';
+            left--;
+        }
+    }
+
+
     function checkCollision(objectA, objectB) {
         if (objectA !== objectB) {
             let ball = null;
             let wall = null;
             let racket = null;
+            let brick = null;
             if (objectA instanceof Ball) {
                 ball = objectA;
             } else if (objectA instanceof Wall) {
                 wall = objectA;
+            } else if (objectA instanceof Brick) {
+                brick = objectA;
             }
             if (objectB instanceof Ball) {
                 ball = objectB;
             } else if (objectB instanceof Wall) {
                 wall = objectB;
+            } else if (objectB instanceof Brick) {
+                brick = objectB;
             }
 
             if (objectA instanceof Racket) {
@@ -234,6 +332,31 @@ $(document).ready(function () {
                     ball.y === wall.y + wall.height
                 ) {
                     ball.invertDirectionY();
+                }
+            }
+
+            if (ball && brick) {
+                if (
+                    (ball.x + ball.diametr === brick.x ||
+                        ball.x === brick.x + brick.width) &&
+                    ball.y > brick.y &&
+                    ball.y < brick.y + brick.height
+                ) {
+                    ball.invertDirectionX();
+                    console.log(brick, brick.div, brick.id);
+                    let for_delete1 = document.getElementById(brick.id);
+                    for_delete1.remove();
+                }
+
+                if (
+                    ball.x > brick.x &&
+                    ball.x < brick.x + brick.width &&
+                    ball.y === brick.y + brick.height
+                ) {
+                    ball.invertDirectionY();
+                    console.log(brick, brick.div, brick.id);
+                    let for_delete2 = document.getElementById(brick.id);
+                    for_delete2.remove();
                 }
             }
 
