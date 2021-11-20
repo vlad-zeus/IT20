@@ -31,33 +31,54 @@ $(document).ready(function () {
             }
             if (i === 10) {
                 div_square.innerHTML = '<span style="font-size:100%;">' + '11' + "<span>"
+                div_square.style.alignItems = "flex-start";
+                div_square.style.justifyContent = "flex-start";
+                div_square.style.alignContent = "flex-start";
             }
             if (i === 12) {
                 div_square.innerHTML = '<span style="font-size:100%;">' + '1' + "<span>"
+                div_square.style.alignItems = "flex-start";
+                div_square.style.justifyСontent = "flex-end";
+                div_square.style.placeContent = "flex-end";
             }
             if (i === 16) {
                 div_square.innerHTML = '<span style="font-size:100%;">' + '10' + "<span>"
+                div_square.style.alignItems = "flex-start";
+                div_square.style.justifyContent = "flex-start";
+                div_square.style.alignContent = "flex-start";
             }
             if (i === 20) {
                 div_square.innerHTML = '<span style="font-size:100%;">' + '2' + "<span>"
+                div_square.style.alignItems = "flex-start";
+                div_square.style.justifyСontent = "flex-end";
+                div_square.style.placeContent = "flex-end";
             }
             if (i === 22) {
                 div_square.innerHTML = '<span style="font-size:150%;">' + '9' + "<span>"
+
             }
             if (i === 28) {
                 div_square.innerHTML = '<span style="font-size:150%;">' + '3' + "<span>"
             }
             if (i === 30) {
                 div_square.innerHTML = '<span style="font-size:100%;">' + '8' + "<span>"
+                div_square.style.alignItems = "flex-end";
+                div_square.style.justifyContent = "flex-start";
             }
             if (i === 34) {
                 div_square.innerHTML = '<span style="font-size:100%;">' + '4' + "<span>"
+                div_square.style.alignItems = "flex-end";
+                div_square.style.justifyContent ="flex-end";
             }
             if (i === 38) {
                 div_square.innerHTML = '<span style="font-size:100%;">' + '7' + "<span>"
+                div_square.style.alignItems = "flex-end";
+                div_square.style.justifyContent = "flex-start";
             }
             if (i === 40) {
                 div_square.innerHTML = '<span style="font-size:100%;">' + '5' + "<span>"
+                div_square.style.alignItems = "flex-end";
+                div_square.style.justifyContent ="flex-end";
             }
             if (i === 46) {
                 div_square.innerHTML = '<span style="font-size:150%;">' + '6' + "<span>"
