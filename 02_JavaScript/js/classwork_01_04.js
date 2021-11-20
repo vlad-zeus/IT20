@@ -27,7 +27,7 @@ $(document).ready(function () {
             div_square.style.alignItems = "center";
             div_square.style.justifyContent = "center";
             if (i === 4) {
-                div_square.innerHTML = '<span style="font-size:150%; display: block">' + '12' + "<span>"
+                div_square.innerHTML = '<span style="font-size:150%; display: block; color: red">' + '12' + "<span>"
             }
             if (i === 10) {
                 div_square.innerHTML = '<span style="font-size:100%;">' + '11' + "<span>"
@@ -54,11 +54,11 @@ $(document).ready(function () {
                 div_square.style.placeContent = "flex-end";
             }
             if (i === 22) {
-                div_square.innerHTML = '<span style="font-size:150%;">' + '9' + "<span>"
+                div_square.innerHTML = '<span style="font-size:150%; color: red"">' + '9' + "<span>"
 
             }
             if (i === 28) {
-                div_square.innerHTML = '<span style="font-size:150%;">' + '3' + "<span>"
+                div_square.innerHTML = '<span style="font-size:150%; ; color: red">' + '3' + "<span>"
             }
             if (i === 30) {
                 div_square.innerHTML = '<span style="font-size:100%;">' + '8' + "<span>"
@@ -81,7 +81,7 @@ $(document).ready(function () {
                 div_square.style.justifyContent ="flex-end";
             }
             if (i === 46) {
-                div_square.innerHTML = '<span style="font-size:150%;">' + '6' + "<span>"
+                div_square.innerHTML = '<span style="font-size:150%; color: red"">' + '6' + "<span>"
             }
             div_square.flex = "0 0";
             document.querySelector(".container").append(div_square);
