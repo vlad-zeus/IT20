@@ -30,7 +30,7 @@ $(document).ready(function () {
               width: ${this.diametr}px;
               height: ${this.diametr}px;
               background: ${this.color}`;
-            result.innerText = this.id;
+            //result.innerText = this.id;
             document.documentElement.append(result);
             return result;
         };
@@ -275,9 +275,6 @@ $(document).ready(function () {
     });
     document.documentElement.onmousemove = r.doMove.bind(r);
     objects.push(r);
-
-
-
 
     function checkCollision(objectA, objectB) {
         if (objectA !== objectB) {
