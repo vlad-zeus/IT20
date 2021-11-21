@@ -40,7 +40,6 @@ $(document).ready(function () {
                     let location = one_event.location;
                     let htmlLink = one_event.htmlLink;
                     let id = one_event.id;
-                    console.log(page_content);
                     page_content = page_content + `<div id = "${id}" class="${id}" style ="color: #1B2E4D; margin: 10px; display: flex; flex-direction: column; align-items: center; min-height: 150px"><H3>${summary}</H3>\n
                            <div class="image_div"><img src="img/image.png" alt="main_photo"></div>
                            <div class="date_start" style="display: flex; flex-direction: row">
@@ -52,17 +51,20 @@ $(document).ready(function () {
                                 <div class="time"style="width: 150px"><h6 align="right">Время окончания: ${time_end}</h6></div>
                            </div>
 
-                           <button type="button1" name="show_more" style="margin: 10px" onclick="alert(id, summary, date_start, time_start, date_end, time_end)">Показать данные</button>
-                           <button type="button2" name="show_more" style="margin: 10px" onclick="delete_event(${id})">Удалить</button>
+                           <button type="submit" name="show_more" style="margin: 10px" onclick="alert('${id}, ${summary}, ${date_start}, ${time_start}, ${location}, ${htmlLink}')">Показать данные</button>
+                           <button type="submit2" name="delete" style="margin: 10px" onclick="delete_event(${id})">Удалить</button>
 
                            </div>`
                 })
                 page_content = $(page_content).appendTo("div.container")
             });
     }
+
+    get_calendar_event('vgorodetsky@gmail.com','AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q','2021-10-03T10:00:00-07:00', '2021-12-31T10:00:00-07:00');
+
     function delete_event(id){
+        console.log("test")
         document.getElementById(id).remove();
     }
-    get_calendar_event('vgorodetsky@gmail.com','AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q','2021-10-03T10:00:00-07:00', '2021-12-31T10:00:00-07:00');
 
 });
