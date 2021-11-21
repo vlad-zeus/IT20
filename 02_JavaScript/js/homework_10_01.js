@@ -19,10 +19,6 @@ $(document).ready(function () {
             .prependTo("body");
     });
 
-    function delete_div(id) {
-        document.getElementById(id).remove()
-    }
-
     let page_content = '';
 
     async function get_calendar_event(email, api_key, min_date, max_date) {
