@@ -403,7 +403,7 @@ $(document).ready(function () {
         let gameOver = isGameOver();
 
         currentGameStep++;
-        if (currentGameStep < 100000 && !gameOver || array.length < 5) {
+        if (currentGameStep < 100000 && !gameOver || array.length < 6) {
             setTimeout(doGameStep, GAME_STEP_DELAY);
         } else {
             alert("Игра закончена");
