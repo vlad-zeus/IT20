@@ -27,8 +27,6 @@ $(document).ready(function () {
                 return response.json();
             })
             .then((json) => {
-                //calendar_events = JSON.stringify(json.items);
-                //console.log(json);
                 json.items.forEach(one_event => {
                     let summary = one_event.summary;
                     let created = one_event.created;
@@ -50,10 +48,8 @@ $(document).ready(function () {
                                 <div class="date" style="width: 150px"><h6 align="left">Дата окончания: ${date_end}</h6></div>
                                 <div class="time"style="width: 150px"><h6 align="right">Время окончания: ${time_end}</h6></div>
                            </div>
-
                            <button type="button" name="show_more" style="margin: 10px" onclick="alert('${id}, ${summary}, ${date_start}, ${time_start}, ${location}, ${htmlLink}')">Показать данные</button>
                            <button type="button" name="delete" style="margin: 10px" onclick="javascript: document.getElementById('${id}').remove();">Удалить</button>
-
                            </div>`
                 })
                 page_content = $(page_content).appendTo("div.container")
