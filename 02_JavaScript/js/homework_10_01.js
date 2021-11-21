@@ -51,8 +51,8 @@ $(document).ready(function () {
                                 <div class="time"style="width: 150px"><h6 align="right">Время окончания: ${time_end}</h6></div>
                            </div>
 
-                           <button type="submit" name="show_more" style="margin: 10px" onclick="alert('${id}, ${summary}, ${date_start}, ${time_start}, ${location}, ${htmlLink}')">Показать данные</button>
-                           <button type="submit2" name="delete" style="margin: 10px" onclick="delete_event(${id})">Удалить</button>
+                           <button type="button" name="show_more" style="margin: 10px" onclick="alert('${id}, ${summary}, ${date_start}, ${time_start}, ${location}, ${htmlLink}')">Показать данные</button>
+                           <button type="button" name="delete" style="margin: 10px" onclick="javascript: delete_div(${id});">Удалить</button>
 
                            </div>`
                 })
@@ -62,9 +62,10 @@ $(document).ready(function () {
 
     get_calendar_event('vgorodetsky@gmail.com','AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q','2021-10-03T10:00:00-07:00', '2021-12-31T10:00:00-07:00');
 
-    function delete_event(id){
-        console.log("test")
+    function delete_div(id) {
+        console.log("test");
         document.getElementById(id).remove();
     }
+
 
 });
