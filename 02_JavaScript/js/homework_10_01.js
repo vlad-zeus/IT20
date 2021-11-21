@@ -9,16 +9,18 @@ $(document).ready(function () {
     $(create_container = function () {
         $('<div class="container"></div>')
             .css({
+                "width": "1400px",
                 "margin": "0 auto!",
                 "display": "flex",
-                "flex-direction": "column",
+                "flex-direction": "row",
                 "align-items": "center",
+                "flex-flow": "row wrap",
             })
             .prependTo("body");
     });
 
-    let calendar_events;
-    let page_content;
+
+    let page_content = '';
 
     async function get_calendar_event(email, api_key, min_date, max_date) {
         fetch(`https://www.googleapis.com/calendar/v3/calendars/${email}/events?key=${api_key}&singleEvents=true&orderBy=starttime&timeMin=${min_date}&timeMax=${max_date}`)
@@ -26,14 +28,41 @@ $(document).ready(function () {
                 return response.json();
             })
             .then((json) => {
-                calendar_events = JSON.stringify(json.items);
-                calendar_events.forEach(one_event => {
-                    page_content = ``;
+                //calendar_events = JSON.stringify(json.items);
+                //console.log(json);
+                json.items.forEach(one_event => {
+                    let summary = one_event.summary;
+                    let created = one_event.created;
+                    let date_start = (((one_event.start).dateTime).split("T"))[0];
+                    let time_start = (((one_event.start).dateTime).split("T"))[1].slice(0, 8);
+                    let date_end = (((one_event.end).dateTime).split("T"))[0];
+                    let time_end = (((one_event.end).dateTime).split("T"))[1].slice(0, 8);
+                    let location = one_event.location;
+                    let htmlLink = one_event.htmlLink;
+                    let id = one_event.id;
+                    console.log(page_content);
+                    page_content = page_content + `<div id = "${id}" class="${id}" style ="color: #1B2E4D; margin: 10px; display: flex; flex-direction: column; align-items: center; min-height: 150px"><H3>${summary}</H3>\n
+                           <div class="image_div"><img src="img/image.png" alt="main_photo"></div>
+                           <div class="date_start" style="display: flex; flex-direction: row">
+                                <div class="date" style="width: 150px"><h6 align="left">Дата начала: ${date_start}</h6></div>
+                                <div class="time" style="width: 150px"><h6 align="right">Время начала: ${time_start}</h6></div>
+                           </div>
+                           <div class="date_end" style="display: flex; flex-direction: row">
+                                <div class="date" style="width: 150px"><h6 align="left">Дата окончания: ${date_end}</h6></div>
+                                <div class="time"style="width: 150px"><h6 align="right">Время окончания: ${time_end}</h6></div>
+                           </div>
+
+                           <button type="button1" name="show_more" style="margin: 10px" onclick="alert(id, summary, date_start, time_start, date_end, time_end)">Показать данные</button>
+                           <button type="button2" name="show_more" style="margin: 10px" onclick="delete_event()">Удалить</button>
+
+                           </div>`
                 })
-                console.log(calendar_event);
+                page_content = $(page_content).appendTo("div.container")
             });
     }
-
+    function delete_event(){
+        this.parentNode.id.remove();
+    }
     get_calendar_event('vgorodetsky@gmail.com','AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q','2021-10-03T10:00:00-07:00', '2021-12-31T10:00:00-07:00');
-
+    button1.onclick = alert;
 });
