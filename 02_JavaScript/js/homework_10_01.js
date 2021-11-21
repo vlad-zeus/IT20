@@ -53,16 +53,16 @@ $(document).ready(function () {
                            </div>
 
                            <button type="button1" name="show_more" style="margin: 10px" onclick="alert(id, summary, date_start, time_start, date_end, time_end)">Показать данные</button>
-                           <button type="button2" name="show_more" style="margin: 10px" onclick="delete_event()">Удалить</button>
+                           <button type="button2" name="show_more" style="margin: 10px" onclick="delete_event(${id})">Удалить</button>
 
                            </div>`
                 })
                 page_content = $(page_content).appendTo("div.container")
             });
     }
-    function delete_event(){
-        this.parentNode.id.remove();
+    function delete_event(id){
+        document.getElementById(id).remove();
     }
     get_calendar_event('vgorodetsky@gmail.com','AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q','2021-10-03T10:00:00-07:00', '2021-12-31T10:00:00-07:00');
-    button1.onclick = alert;
+
 });
