@@ -4,8 +4,6 @@
 и 2 кнопки с такими действиями: alert([любая инфа по этому объекту]) и удаление блока со страницы.
 Генерацию блоков обертнуть в асинхронную функцию, добавление блоков в дерево сделать синхронной функцией.*/
 
-/*Я не понимаю, почему не происходит удаление дива. Я повесил функцию, но постоянно улетаю в ошибку. Как отладить это - я не знаю*/
-
 $(document).ready(function () {
 
     $(create_container = function () {
@@ -21,6 +19,9 @@ $(document).ready(function () {
             .prependTo("body");
     });
 
+    function delete_div(id) {
+        document.getElementById(id).remove()
+    }
 
     let page_content = '';
 
@@ -44,9 +45,10 @@ $(document).ready(function () {
                     let id = one_event.id;
                     page_content = page_content + `<div id = "${id}" class="${id}" style ="color: #1B2E4D; margin: 10px; display: flex; flex-direction: column; align-items: center; min-height: 150px"><H3>${summary}</H3>\n
                            <div class="image_div"><img src="img/image.png" alt="main_photo"></div>
-                           <div class="date_start" style="display: flex; flex-direction: row">
+                           <div class="date_start" style="display: flex; flex-direction: row; flex-wrap: wrap; width: 300px;">
                                 <div class="date" style="width: 150px"><h6 align="left">Дата начала: ${date_start}</h6></div>
                                 <div class="time" style="width: 150px"><h6 align="right">Время начала: ${time_start}</h6></div>
+                                <div class="adress" style="width: 300px"><h6>Адрес: ${location}</h6></div>
                            </div>
                            <div class="date_end" style="display: flex; flex-direction: row">
                                 <div class="date" style="width: 150px"><h6 align="left">Дата окончания: ${date_end}</h6></div>
@@ -54,20 +56,12 @@ $(document).ready(function () {
                            </div>
 
                            <button type="button" name="show_more" style="margin: 10px" onclick="alert('${id}, ${summary}, ${date_start}, ${time_start}, ${location}, ${htmlLink}')">Показать данные</button>
-                           <button type="button" name="delete" style="margin: 10px" onclick="javascript: delete_div(${id});">Удалить</button>
+                           <button type="button" name="delete" style="margin: 10px" onclick="javascript: document.getElementById('${id}').remove();">Удалить</button>
 
                            </div>`
                 })
                 page_content = $(page_content).appendTo("div.container")
             });
     }
-
-    get_calendar_event('vgorodetsky@gmail.com','AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q','2021-10-03T10:00:00-07:00', '2021-12-31T10:00:00-07:00');
-
-    function delete_div(id) {
-        console.log("test");
-        document.getElementById(id).remove();
-    }
-
-
+get_calendar_event('vgorodetsky@gmail.com','AIzaSyCWGk2otBltS3FbSdEEimN4FypzUGokk3Q','2021-10-03T10:00:00-07:00', '2021-12-31T10:00:00-07:00');
 });
