@@ -7,7 +7,6 @@ $(document).ready(function () {
         div.style.display = "flex";
         div.style.flexWrap = "wrap";
         div.style.flexDirection = "row";
-        div.style.flexDirection = "row";
         div.justifyContent = "center";
         div.style.width = "490px";
         div.style.height = "490px";
