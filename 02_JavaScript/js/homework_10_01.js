@@ -37,7 +37,7 @@ $(document).ready(function () {
                     let location = one_event.location;
                     let htmlLink = one_event.htmlLink;
                     let id = one_event.id;
-                    page_content = page_content + `<div id = "${id}" class="${id}" style ="color: #1B2E4D; margin: 10px; display: flex; flex-direction: column; align-items: center; min-height: 150px"><H3>${summary}</H3>\n
+                    page_content += `<div id = "${id}" class="${id}" style ="color: #1B2E4D; background: #9dc1d3; margin: 10px; display: flex; flex-direction: column; align-items: center; min-height: 150px"><H3>${summary}</H3>\n
                            <div class="image_div"><img src="img/image.png" alt="main_photo"></div>
                            <div class="date_start" style="display: flex; flex-direction: row; flex-wrap: wrap; width: 300px;">
                                 <div class="date" style="width: 150px"><h6 align="left">Дата начала: ${date_start}</h6></div>
@@ -48,8 +48,10 @@ $(document).ready(function () {
                                 <div class="date" style="width: 150px"><h6 align="left">Дата окончания: ${date_end}</h6></div>
                                 <div class="time"style="width: 150px"><h6 align="right">Время окончания: ${time_end}</h6></div>
                            </div>
-                           <button type="button" name="show_more" style="margin: 10px" onclick="alert('${id}, ${summary}, ${date_start}, ${time_start}, ${location}, ${htmlLink}')">Показать данные</button>
-                           <button type="button" name="delete" style="margin: 10px" onclick="javascript: document.getElementById('${id}').remove();">Удалить</button>
+                                <div class="button_div" style="display: flex; flex-direction: row; flex-wrap: wrap;">                          
+                                <button type="button" name="show_more" style="margin: 10px" onclick="alert('${id}, ${summary}, ${date_start}, ${time_start}, ${location}, ${htmlLink}')">Показать данные</button>
+                           <button type="button" name="delete" style="margin: 10px" onclick="document.getElementById('${id}').remove();">Удалить</button></div>
+                           </div>
                            </div>`
                 })
                 page_content = $(page_content).appendTo("div.container")
