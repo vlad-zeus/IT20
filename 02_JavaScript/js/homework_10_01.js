@@ -27,7 +27,7 @@ $(document).ready(function () {
                 return response.json();
             })
             .then((json) => {
-                json.items.forEach(one_event => {
+                    json.items.forEach(one_event => {
                     let summary = one_event.summary;
                     let created = one_event.created;
                     let date_start = (((one_event.start).dateTime).split("T"))[0];

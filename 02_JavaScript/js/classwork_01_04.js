@@ -91,16 +91,17 @@ $(document).ready(function () {
                 div_hour.className = "hour";
                 div_hour.style.minWidth = "10px";
                 div_hour.style.position = "absolute";
-                div_hour.style.background = "black";
+                div_hour.style.background = `linear-gradient(to right bottom, transparent 50%, black 50%) left / 50% 100% no-repeat, linear-gradient(to left bottom, transparent 50%, black 50%) right / 50% 100% no-repeat`
                 div_hour.style.top = "-110px";
                 div_hour.style.transformOrigin = "50% 100%";
+
                 document.querySelector(".square25").append(div_hour);
                 let div_minutes = document.createElement("div");
                 div_minutes.style.minHeight = "200px";
                 div_minutes.className = "minutes";
                 div_minutes.style.minWidth = "5px";
                 div_minutes.style.position = "absolute";
-                div_minutes.style.background = "black";
+                div_minutes.style.background = `linear-gradient(to right bottom, transparent 50%, black 50%) left / 50% 100% no-repeat, linear-gradient(to left bottom, transparent 50%, black 50%) right / 50% 100% no-repeat`;
                 div_minutes.style.top = "-160px";
                 div_minutes.style.transformOrigin = "50% 100%";
                 document.querySelector(".square25").append(div_minutes);
@@ -109,7 +110,7 @@ $(document).ready(function () {
                 div_second.className = "second";
                 div_second.style.minWidth = "3px";
                 div_second.style.position = "absolute";
-                div_second.style.background = "black";
+                div_second.style.background = `linear-gradient(to right bottom, transparent 50%, black 50%) left / 50% 100% no-repeat, linear-gradient(to left bottom, transparent 50%, black 50%) right / 50% 100% no-repeat`;
                 div_second.style.top = "-180px";
                 div_second.style.transformOrigin = "50% 100%";
                 document.querySelector(".square25").append(div_second);
