@@ -27,7 +27,7 @@ $(document).ready(function () {
                 return response.json();
             })
             .then((json) => {
-                    json.items.forEach(one_event => {
+                json.items.forEach(one_event => {
                     let summary = one_event.summary;
                     let created = one_event.created;
                     let date_start = (((one_event.start).dateTime).split("T"))[0];
@@ -48,9 +48,9 @@ $(document).ready(function () {
                                 <div class="date" style="width: 150px"><h6 align="center">Дата окончания: ${date_end}</h6></div>
                                 <div class="time"style="width: 150px"><h6 align="center">Время окончания: ${time_end}</h6></div>
                            </div>
-                                <div class="button_div" style="display: flex; flex-direction: row; flex-wrap: wrap;">                          
+                           <div class="button_div" style="display: flex; flex-direction: row; flex-wrap: wrap;">                          
                                 <button type="button" name="show_more" style="margin: 10px" onclick="alert('${id}, ${summary}, ${date_start}, ${time_start}, ${location}, ${htmlLink}')">Показать данные</button>
-                           <button type="button" name="delete" style="margin: 10px" onclick="document.getElementById('${id}').remove();">Удалить</button></div>
+                                <button type="button" name="delete" style="margin: 10px" onclick="document.getElementById('${id}').remove();">Удалить</button></div>
                            </div>
                            </div>`
                 })
