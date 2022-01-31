@@ -1,15 +1,27 @@
 <template>
-    <div>
-
+  <div id="v-model-checkbox">
+    <div v-for="item in options" :key="item">
+      <input type="checkbox" :value="item" v-model="picked" />
+      <label>{{ item }}</label>
     </div>
+    <!--     <span>Selected: {{ picked }}</span> ЭТО ЕСЛИ МЫ ЗАХОТИМ УВИДЕТЬ,ЧТО ЖЕ ВЫБРАЛИ-->
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {
+  data() {
+    return {
+      picked: [],
+    };
+  },
+  props: {
+    options: {
+      type: Array,
+    },
+  },
+  watch: {},
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
