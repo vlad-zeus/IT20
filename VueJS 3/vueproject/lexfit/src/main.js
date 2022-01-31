@@ -1,0 +1,21 @@
+import { createApp } from "vue";
+import App from "./App.vue";
+import "./registerServiceWorker";
+import router from "./router";
+import store from "./store";
+import "./assets/tailwind.css";
+import MyRadioButton from "./components/ui/MyRadioButton.vue";
+import MySelect from "./components/ui/MySelect.vue";
+import MyCheckbox from "./components/ui/MyCheckbox.vue";
+import MyText from "./components/ui/MyText.vue";
+import MyTextArea from "./components/ui/MyTextArea.vue";
+
+const app = createApp(App);
+app.use(store);
+app.use(router);
+app.mount("#app");
+app.component("MyRadioButton", MyRadioButton);
+app.component("MySelect", MySelect);
+app.component("MyCheckbox", MyCheckbox);
+app.component("MyText", MyText);
+app.component("MyTextArea", MyTextArea);
