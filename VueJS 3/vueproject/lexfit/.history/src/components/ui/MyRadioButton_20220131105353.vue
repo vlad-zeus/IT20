@@ -4,7 +4,7 @@
       <input type="radio" :id="item" :value="item" v-model="picked" />
       <label>{{ item }}</label>
     </div>
-    <!--     <span>Selected: {{ picked }}</span> ЭТО ЕСЛИ МЫ ЗАХОТИМ УВИДЕТЬ,ЧТО ЖЕ ВЫБРАЛИ-->
+    <span>Selected: {{ picked }}</span>
   </div>
 </template>
 

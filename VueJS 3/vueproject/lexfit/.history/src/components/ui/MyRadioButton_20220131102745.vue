@@ -1,22 +1,23 @@
 <template>
-  <div id="v-model-radiobutton">
+<div id="v-model-radiobutton">
     <div v-for="item in options" :key="item">
       <input type="radio" :id="item" :value="item" v-model="picked" />
-      <label>{{ item }}</label>
+      <label>{{ item }}</label
+      ><br />
     </div>
-    <!--     <span>Selected: {{ picked }}</span> ЭТО ЕСЛИ МЫ ЗАХОТИМ УВИДЕТЬ,ЧТО ЖЕ ВЫБРАЛИ-->
-  </div>
-</template>
+  </template>
+</div>
 
 <script>
 export default {
   data() {
     return {
-      picked: "",
+      picked: {},
+      raidioOptions: ["one", "two", "three"],
     };
   },
   props: {
-    options: {
+    option: {
       type: Array,
     },
   },
